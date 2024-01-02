@@ -67,6 +67,38 @@ Function.prototype.myApply = function (context: any, args: any[]) {
   return result;
 };
 
+Function.prototype.myApplyBind = function (thisArg, argArray = []) {
+  console.log("this ", this);
+  console.log("thisArg ", thisArg);
+
+  // we are calling the function with this
+  // because we are sending the object which will be referred
+  // inside the function with this.age
+  // and age will be undefined if we don't call the function with this
+  // because this will refer to the global object
+  return this.bind(thisArg)(...argArray);
+};
+
+Function.prototype.myApplyCall = function (thisArg, argArray = []) {
+  return this.call(thisArg, ...argArray);
+};
+
+Function.prototype.myApplySymbol = function (thisArg, argArray = []) {
+  const symbol = Symbol(); // create a unique key
+  const wrapperObj = Object(thisArg); // convert primitive to object
+
+  // add the function to the wrapper object
+  Object.defineProperty(wrapperObj, symbol, {
+    value: this,
+    enumerable: false,
+  });
+
+  // execute the function using the unique key
+  return wrapperObj[symbol](...argArray);
+};
+
+// --------------------------------------------------------------------------
+
 function multiplyAge(this: any, multiplier = 1) {
   return this.age * multiplier;
 }
@@ -81,6 +113,18 @@ const john = {
 
 console.log(multiplyAge.myApply(mary)); // 21
 console.log(multiplyAge.myApply(john, [2])); // 84
+
+//
+console.log("bind ", multiplyAge.myApplyBind(mary)); // 21
+console.log("bind ", multiplyAge.myApplyBind(john, [2])); // 84
+
+//
+console.log("call ", multiplyAge.myApplyCall(maryy)); // 21
+console.log("call ", multiplyAge.myApplyCall(johnn, [2])); // 84
+
+//
+console.log("symbol ", multiplyAge.myApplySymbol(maryy)); // 21
+console.log("symbol ", multiplyAge.myApplySymbol(johnn, [2])); // 84
 
 /*
  * when multiplyAge.myApply(mary) statement is executed. This is where the

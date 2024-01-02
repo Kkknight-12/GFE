@@ -4,6 +4,9 @@ declare global {
   }
   interface Function {
     myApply(this: any, thisArg: any, argArray?: any[]): any;
+    myApplyBind(this: any, thisArg: any, argArray?: any[]): any;
+    myApplyCall(this: any, thisArg: any, argArray?: any[]): any;
+    myApplySymbol(this: any, thisArg: any, argArray?: any[]): any;
   }
 }
 export {};

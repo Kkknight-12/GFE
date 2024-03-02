@@ -16,7 +16,8 @@ export default function inRange(
   start: number = 0,
   end: number = 0,
 ): boolean {
-  // if only 2 arguments are specified, the second argument becomes end
+  // if end is passed as argument, the second argument
+  // becomes end
   // and start is set to 0
   if (end === 0) {
     end = start
@@ -29,6 +30,7 @@ export default function inRange(
     ;[start, end] = [end, start]
   }
   console.log({ value, start, end })
+
   // check if value is in range
   return value >= start && value < end
 }

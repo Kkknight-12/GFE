@@ -1,4 +1,5 @@
 import AccordionSolution from '../../components/Accordion/AccSolution.tsx'
+import ContactForm from '../../components/ContactForm'
 import { ProgressBar2 } from '../../components/ProgressBar2/index.js'
 import Solution from '../../components/ProgressBar2/Solution.js'
 import Accordion from '../../components/Accordion/'
@@ -14,6 +15,7 @@ function EasyComponents() {
       <Solution />
       <Accordion />
       <AccordionSolution />
+      <ContactForm />
     </div>
   )
 }

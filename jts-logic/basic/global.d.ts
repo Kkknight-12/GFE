@@ -1,15 +1,16 @@
 declare global {
   interface Array<T> {
-    myApply(context: any, args: any[]): any;
+    myApply(context: any, args: any[]): any
   }
   interface Function {
-    myApply(this: any, thisArg: any, argArray?: any[]): any;
-    myApplyBind(this: any, thisArg: any, argArray?: any[]): any;
-    myApplyCall(this: any, thisArg: any, argArray?: any[]): any;
-    myApplySymbol(this: any, thisArg: any, argArray?: any[]): any;
+    myApply(this: any, thisArg: any, argArray?: any[]): any
+    myApplyBind(this: any, thisArg: any, argArray?: any[]): any
+    myApplyCall(this: any, thisArg: any, argArray?: any[]): any
+    myApplySymbol(this: any, thisArg: any, argArray?: any[]): any
+    myCall(this: any, thisArg: any, ...argArray: any[]): any
   }
 }
-export {};
+export {}
 
 /*
  * If a file doesn't have any top-level import or export statements, it's

@@ -11,9 +11,9 @@ export default function fill<T>(
   array: Array<T>,
   value: any,
   start: number = 0,
-  end: number = array.length
+  end: number = array.length,
 ): Array<T> {
-  const length = array.length;
+  const length = array.length
 
   /*
    * start < 0 ?: This checks if start is negative. If it is, the code after
@@ -37,18 +37,17 @@ export default function fill<T>(
    * the second last element, and so on.
    *  */
   // if end is negative, end from the end of the array
-  start = start < 0 ? (-start > length ? 0 : length + start) : start;
-  end = end < 0 ? length + end : end > length ? length + 1 : end;
+  start = start < 0 ? (-start > length ? 0 : length + start) : start
+  end = end < 0 ? length + end : end > length ? length + 1 : end
 
   //
   for (let i = start; i < end; i++) {
-    array[i] = value;
+    array[i] = value
   }
-
-  return array;
+  return array
 }
 
-console.log(fill([1, 2, 3], "a")); // ['a', 'a', 'a']
-console.log(fill([4, 6, 8, 10], "*", 1, 3)); // [4, '*', '*', 10]
-console.log(fill([4, 6, 8, 10, 12], "*", -3, -1)); // [4, 6, '*', '*', 12]
-console.log(fill([4, 6, 8, 10, 12], "*", -6, -1)); // [ '*', '*', '*', '*', 12 ]
+console.log(fill([1, 2, 3], 'a')) // ['a', 'a', 'a']
+console.log(fill([4, 6, 8, 10], '*', 1, 3)) // [4, '*', '*', 10]
+console.log(fill([4, 6, 8, 10, 12], '*', -3, -1)) // [4, 6, '*', '*', 12]
+console.log(fill([4, 6, 8, 10, 12], '*', -6, -1)) // [ '*', '*', '*', '*', 12 ]

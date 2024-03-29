@@ -35,4 +35,9 @@ export const cancelInterval = setCancelInterval(() => {
  * a function or a piece of code to be run repeatedly at a
  * fixed time delay between each call. It returns an interval ID
  * which can be used to stop the interval with clearInterval.
+ *
+ * clearInterval is a method provided by the JavaScript runtime
+ * environment (like a web browser or Node.js) that stops the
+ * interval specified by the interval ID that was returned by
+ * setInterval.
  *  */

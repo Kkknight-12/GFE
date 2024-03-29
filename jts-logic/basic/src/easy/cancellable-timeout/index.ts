@@ -12,8 +12,9 @@ const setCancellableTimeout = (
   delay?: number,
   ...args: Array<any>
 ) => {
-  const timerId = setTimeout(callback, delay, args);
-  return () => clearTimeout(timerId);
-};
+  const timerId = setTimeout(callback, delay, args)
+  return () => clearTimeout(timerId)
+}
 
-setCancellableTimeout(() => console.log("Hello"), 3000);
+const cancel = setCancellableTimeout(() => console.log('Hello'), 3000)
+cancel()

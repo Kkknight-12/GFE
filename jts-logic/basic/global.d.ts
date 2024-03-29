@@ -1,6 +1,20 @@
 declare global {
+  /*
+   * T represents the type of elements in the array. When
+   * you use this interface, you can replace T with any
+   * type, like number, string, etc.
+   *  */
   interface Array<T> {
-    myApply(context: any, args: any[]): any
+    /*
+     * square(): Array<number>; method declaration inside
+     * the interface indicates that this method, when
+     * called on an array, will return a new array where
+     * each element is a number. This is because squaring
+     * any number will always result in a number,
+     * regardless of the type of elements in the original
+     * array.
+     *  */
+    square(): Array<number>
   }
   interface Function {
     myApply(this: any, thisArg: any, argArray?: any[]): any

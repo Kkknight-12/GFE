@@ -1,29 +1,13 @@
-const sleep = (duration: number): Promise<string> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('done!')
-    }, duration)
-  })
+function bharo(arr: any[], value: string, start: number = 0, end?: number) {
+  if (end === undefined) {
+    end = arr.length
+  }
+  for (let i = start; i < end; i++) {
+    arr.splice(i, 1, value)
+  }
+  return arr
 }
 
-console.log('Hello!') // 1st
-sleep(2000).then((resp) => {
-  console.log(resp) // 4th
-})
-
-// Asynchronous sleep
-async function greeting() {
-  console.log('Hello!') // 2nd
-  await sleep(2000) // if we remove await, then it will
-  // log immediately after 'Hello!' which will be
-  // synchronous/blocking code
-  console.log('Bye.') // Only logs after 2000 milliseconds (2 seconds)
-}
-
-greeting()
-
-// setInterval(() => {
-//   console.log('Tick')
-// }, 500)
-
-console.log('chalo chalte hai!') // 3rd
+console.log(bharo([1, 2, 3], 'a'))
+console.log(bharo([4, 6, 8, 10], '*', 1, 3))
+console.log(bharo([4, 6, 8, 10, 12], '*', -3, -1))

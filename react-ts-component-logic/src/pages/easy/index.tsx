@@ -1,8 +1,4 @@
-import AccordionSolution from '../../components/Accordion/AccSolution.tsx'
-import ContactForm from '../../components/ContactForm'
-import { ProgressBar2 } from '../../components/ProgressBar2/index.js'
-import Solution from '../../components/ProgressBar2/Solution.js'
-import Accordion from '../../components/Accordion/'
+import FlightBookerSolution from '../../components/easy/FlightBooker/Solution.tsx'
 
 function EasyComponents() {
   return (
@@ -11,11 +7,12 @@ function EasyComponents() {
       {/* <ProgressBar completion={"50%"} /> */}
       {/* <ProgressBar completion={"100%"} /> */}
       {/* <Dropdown /> */}
-      <ProgressBar2 completion={'70%'} />
-      <Solution />
-      <Accordion />
-      <AccordionSolution />
-      <ContactForm />
+      {/* <ProgressBar2 completion={'70%'} /> */}
+      {/* <Solution /> */}
+      {/* <Accordion /> */}
+      {/* <AccordionSolution /> */}
+      {/* <ContactForm /> */}
+      <FlightBookerSolution />
     </div>
   )
 }

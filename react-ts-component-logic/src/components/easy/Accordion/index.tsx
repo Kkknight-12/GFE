@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { sections } from './_mockData.js'
+import { sections } from './_mockData.ts'
 
 interface AccordionItemProps {
   id: string

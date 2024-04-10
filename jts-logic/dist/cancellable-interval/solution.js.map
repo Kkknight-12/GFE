@@ -1,0 +1,1 @@
+{"version":3,"file":"solution.js","sourceRoot":"","sources":["../../src/cancellable-interval/solution.ts"],"names":[],"mappings":";AAAA,SAAS,0BAA0B,CACjC,QAAkB,EAClB,KAAc,EACd,GAAG,IAAW;IAEd,MAAM,OAAO,GAAG,WAAW,CAAC,QAAQ,EAAE,KAAK,EAAE,GAAG,IAAI,CAAC,CAAC;IAEtD,OAAO,GAAG,EAAE;QACV,aAAa,CAAC,OAAO,CAAC,CAAC;IACzB,CAAC,CAAC;AACJ,CAAC"}
